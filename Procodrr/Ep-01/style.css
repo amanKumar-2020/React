@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  width: 100%;
+  font-size: larger;
+}
+body{
+  background-color: #393535;
+  color: aliceblue;
+}
+section{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0px auto;
+  margin-top: 50px;
+}
+button img{
+  height: 50px;
+  background-color: #393535;
+  
+}
