@@ -1,16 +1,16 @@
-import React ,{useContext} from 'react'
-import { UserContext } from '../context/UserContext.js'
+import React from 'react'
+import { useContext } from 'react'
+import { UserContext } from '../context/UserContext'
+
 
 const Button = () => {
-  const {count,setCount} = useContext(UserContext)
+  const data = useContext(UserContext)
   return (
     <div>
-      {count}
-      <button
-      onClick={()=>setCount((count)=>count+1)}
-      >inc</button>
+      {data.count}
+      <button onClick={()=>data.setCount((c)=>c+1)}>click</button>
     </div>
   )
 }
 
-export default Button ;
+export default Button
