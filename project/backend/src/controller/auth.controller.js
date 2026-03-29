@@ -1,7 +1,7 @@
 import userModel from "../models/user.model.js";
+import jwt from "jsonwebtoken";
 
 async function registerController(req, res, next) {
-    console.log("register test")
   const { username, email, password } = req.body;
   try {
     if (!username || !email || !password) {
@@ -27,10 +27,16 @@ async function registerController(req, res, next) {
     const newUser = new userModel({ username, email, password });
     await newUser.save();
 
+    const token = jwt.sign({ id: newUser._id }, process.env.JWT_SECRET, {
+      expiresIn: "2d",
+    });
+
+    res.cookie("token", token);
+    
     res.status(201).json({
         success: true,
         message: "User registered successfully",
-        user: newUser,
+        user: newUser
       });
   } catch (error) {
     next(error);
