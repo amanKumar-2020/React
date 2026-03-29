@@ -14,4 +14,8 @@ authRouter.post("/login", authController.loginController);
 // @access  Public
 authRouter.post("/register", authController.registerController);
 
+authRouter.get("/test", (req, res) => {
+    res.json({ message: "Test route is working!" });
+});
+
 export default authRouter;  
