@@ -1,0 +1,69 @@
+:root {
+  color-scheme: light dark;
+}
+
+.App {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background-color: light-dark(#ffffff, #121212);
+  color: light-dark(#333333, #efefef);
+}
+
+.counter-card {
+  width: min(100%, 380px);
+  padding: 24px;
+  border-radius: 14px;
+  border: 1px solid light-dark(#d9d9d9, #2a2a2a);
+  background: light-dark(#fafafa, #1a1a1a);
+}
+
+.counter-card h1 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.count-number {
+  text-align: center;
+  font-size: 52px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.button-row,
+.inc-by-row {
+  display: flex;
+  gap: 10px;
+}
+
+.button-row {
+  margin-bottom: 12px;
+}
+
+.button-row button,
+.inc-by-row button,
+.inc-by-row input {
+  height: 40px;
+  border-radius: 8px;
+  border: 1px solid light-dark(#cfcfcf, #333333);
+}
+
+.button-row button,
+.inc-by-row button {
+  cursor: pointer;
+  background: light-dark(#f0f0f0, #2b2b2b);
+  color: inherit;
+  padding: 0 14px;
+}
+
+.button-row button {
+  flex: 1;
+}
+
+.inc-by-row input {
+  flex: 1;
+  background: transparent;
+  color: inherit;
+  padding: 0 12px;
+}
