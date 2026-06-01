@@ -7,22 +7,34 @@ let initialState = {
   age: 23,
 };
 
+const INCREMENT = "post/increment"
+const DECREMENT = "post/decrement"
+const INCREASE_BY = "post/incrementBy"
+const DECREMENT_BY = "post/decrementBy";
+
 function reducer(state =initialState, action) {
-  if (action.type === "post/increment") {
-    return { ...state, post: state.post + 1 };
-  } 
-  else if (action.type === "post/decrement") {
-    return { ...state, post: state.post - 1 };
-  }
-   else if (action.type === "post/incrementBy") {
-     return { ...state, post: state.post - action.payload };
-   } return state
+
+    switch(action.type){
+        case INCREMENT :
+            return { ...state, post: state.post + 1 };
+        case DECREMENT :
+             return { ...state, post: state.post - 1 };
+        case INCREASE_BY :
+            return { ...state, post: state.post + action.payload };
+        case DECREMENT_BY :
+            return { ...state, post: state.post - action.payload };
+        default : return state
+    }
 }
 
 const store = createStore(reducer)
 console.log(store)
 
-console.log(store.getState());
+store.subscribe(()=>{
+    console.log(store.getState())
+})
 
-store.dispatch({ type: "post/decrement" });
-console.log(store.getState())
+store.dispatch({ type: INCREMENT });
+store.dispatch({ type: DECREMENT });
+store.dispatch({ type: INCREASE_BY, payload:10 });
+store.dispatch({ type: DECREMENT_BY, payload:20 });
