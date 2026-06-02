@@ -27,7 +27,7 @@ function reducer(state =initialState, action) {
     }
 }
 
-const store = createStore(reducer)
+const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__?.());
 console.log(store)
 
 store.subscribe(()=>{
@@ -35,6 +35,6 @@ store.subscribe(()=>{
 })
 
 store.dispatch({ type: INCREMENT });
-store.dispatch({ type: DECREMENT });
-store.dispatch({ type: INCREASE_BY, payload:10 });
-store.dispatch({ type: DECREMENT_BY, payload:20 });
+// store.dispatch({ type: DECREMENT });
+// store.dispatch({ type: INCREASE_BY, payload:10 });
+// store.dispatch({ type: DECREMENT_BY, payload:20 });
