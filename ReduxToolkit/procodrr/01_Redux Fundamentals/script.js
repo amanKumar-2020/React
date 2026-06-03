@@ -1,29 +1,15 @@
 import {createStore, legacy_createStore} from "redux"
+import { products } from "./productsList";
 console.dir(createStore)
 
-let initialState = {
-  post: 0,
-  name: "Aman",
-  age: 23,
-};
+let initialState = products;
 
-const INCREMENT = "post/increment"
-const DECREMENT = "post/decrement"
-const INCREASE_BY = "post/incrementBy"
-const DECREMENT_BY = "post/decrementBy";
+const CARD_ADD_ITEM = "card/add_Item"
 
 function reducer(state =initialState, action) {
 
     switch(action.type){
-        case INCREMENT :
-            return { ...state, post: state.post + 1 };
-        case DECREMENT :
-             return { ...state, post: state.post - 1 };
-        case INCREASE_BY :
-            return { ...state, post: state.post + action.payload };
-        case DECREMENT_BY :
-            return { ...state, post: state.post - action.payload };
-        default : return state
+        
     }
 }
 
@@ -34,7 +20,4 @@ store.subscribe(()=>{
     console.log(store.getState())
 })
 
-store.dispatch({ type: INCREMENT });
-// store.dispatch({ type: DECREMENT });
-// store.dispatch({ type: INCREASE_BY, payload:10 });
-// store.dispatch({ type: DECREMENT_BY, payload:20 });
+store.dispatch({type: CARD_ADD_ITEM , payload: {}})
