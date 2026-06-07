@@ -21,6 +21,24 @@ export default function product({ id, title, price, rating, image }) {
           </span>
         </p>
       </div>
+      <div className="actions">
+        <button
+          type="button"
+          className="btn add-to-cart"
+          aria-label={`Add ${title} to cart`}
+          data-product-id={id}
+        >
+          Add to cart
+        </button>
+        <button
+          type="button"
+          className="btn buy-now"
+          aria-label={`Buy ${title} now`}
+          data-product-id={id}
+        >
+          Buy now
+        </button>
+      </div>
     </article>
   );
 }
