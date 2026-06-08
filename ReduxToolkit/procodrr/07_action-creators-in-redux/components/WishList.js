@@ -1,23 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
 
 export default function WishList() {
-  const products = useSelector((state) => state.products);
-  const wishListItems = useSelector((state) => state.wishList);
-
-  const wishListProducts = wishListItems.reduce((items, wishListItem) => {
-    const product = products.find((item) => item.id === wishListItem.productId);
-
-    if (!product) {
-      return items;
-    }
-
-    if (!items.some((item) => item.id === product.id)) {
-      items.push(product);
-    }
-
-    return items;
-  }, []);
+  
 
   return (
     <section className="wishlist-section">
