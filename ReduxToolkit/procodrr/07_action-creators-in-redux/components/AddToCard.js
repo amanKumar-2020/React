@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 export default function AddToCard() {
-	const cartProducts = useSelector()
+	const cartProducts = useSelector((state) => state.addToCard);
 
 	return (
 		<section className="cart-section">

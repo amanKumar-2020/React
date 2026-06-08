@@ -1,4 +1,5 @@
 import { productsList } from "./productsList";
-export function productReducer(state = productReducer, action) {
+
+export function productReducer(state = productsList) {
   return state;
 }

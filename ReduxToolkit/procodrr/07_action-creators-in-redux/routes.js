@@ -7,10 +7,11 @@ import AddToCard from "./components/AddToCard";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
-    children:[
-      {path:"/add-to-cart" , element:<AddToCard/>},
-      {path:"/wishlist" , element:<WishList/>}
-    ]
+    element: <App />, // Acts as the master frame for the Header
+    children: [
+      { index: true, element: <Home /> },
+      { path: "wishlist", element: <WishList /> },
+      { path: "add-to-cart", element: <AddToCard /> },
+    ],
   },
 ]);

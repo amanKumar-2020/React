@@ -1,8 +1,9 @@
 import React from "react";
+import { useSelector } from "react-redux";
 
 export default function WishList() {
   
-
+const wishListProducts = useSelector((state) => state.wishlist);
   return (
     <section className="wishlist-section">
       <div className="wishlist-header">

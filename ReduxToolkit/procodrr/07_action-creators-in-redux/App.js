@@ -6,7 +6,11 @@ import "./App.css";
 export default function App() {
   return (
     <>
-      <Header/>
+      <Header />
+      <main className="page-shell">
+        {/* React Router will inject the correct page component down here */}
+        <Outlet />
+      </main>
     </>
   );
 }

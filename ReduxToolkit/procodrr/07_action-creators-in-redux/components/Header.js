@@ -8,7 +8,7 @@ export default function Header() {
          navigate("/");
     }
     const handleAddToCardAction =()=>{
-         navigate("/add-to-card");
+         navigate("/add-to-cart");
     }
     const handleWishList=()=>{
          navigate("/wishlist");
