@@ -1,6 +1,13 @@
+import { useDispatch, useSelector } from "react-redux";
+import { addCardItem } from "../store/cartReducer";
+
 export default function product({ id, title, price, rating, image }) {
   const filledStars = Math.round(rating);
-
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.addToCards);
+  function handleAddToCard() {
+    dispatch(addCardItem(id, title, price, rating, image));
+  }
   return (
     <article key={id} className="product">
       <div className="product-image">
@@ -26,7 +33,7 @@ export default function product({ id, title, price, rating, image }) {
           type="button"
           className="btn add-to-cart"
           aria-label={`Add ${title} to cart`}
-          data-product-id={id}
+          onClick={handleAddToCard}
         >
           Add to cart
         </button>

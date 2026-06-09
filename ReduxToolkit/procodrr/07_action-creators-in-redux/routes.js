@@ -3,6 +3,7 @@ import App from "./App";
 import Home from "./components/Home";
 import WishList from "./components/WishList";
 import AddToCard from "./components/AddToCard";
+import Card from "./pages/Card";
 
 export const router = createBrowserRouter([
   {
@@ -11,7 +12,7 @@ export const router = createBrowserRouter([
     children: [
       { index: true, element: <Home /> },
       { path: "wishlist", element: <WishList /> },
-      { path: "add-to-cart", element: <AddToCard /> },
+      { path: "add-to-cart", element: <Card /> },
     ],
   },
 ]);

@@ -7,7 +7,6 @@ export default function Home() {
   
   return (
     <section>
-      home
       <div className="section-heading">
         <h2>Products</h2>
         <p>Browse the catalog and add items to the cart.</p>
@@ -17,6 +16,7 @@ export default function Home() {
           return (
             <Product
               key={id}
+              id= {id}
               title={title}
               price={price}
               rating={rating.rate}
