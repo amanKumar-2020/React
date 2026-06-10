@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router"; // or 'react-router-dom'
+import { createBrowserRouter } from "react-router"; // or 'react-router'
 import App from "./App";
 import Home from "./components/Home";
 import WishList from "./components/WishList";
